@@ -1,0 +1,6 @@
+<If "%{SERVER_NAME} = 'preime.cheftoque.fr'">
+AuthName "Site de test protégé"
+AuthType Basic
+AuthUserFile "/homez.938/cheftos/wwwPreime/current/.htpasswd"
+Require valid-user
+</If>

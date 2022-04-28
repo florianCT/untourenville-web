@@ -1,0 +1,128 @@
+{
+  "name": "roots/bedrock",
+  "type": "project",
+  "license": "MIT",
+  "description": "WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure",
+  "homepage": "https://roots.io/bedrock/",
+  "authors": [
+      {
+          "name": "Scott Walkinshaw",
+          "email": "scott.walkinshaw@gmail.com",
+          "homepage": "https://github.com/swalkinshaw"
+      },
+      {
+          "name": "Ben Word",
+          "email": "ben@benword.com",
+          "homepage": "https://github.com/retlehs"
+      }
+  ],
+  "keywords": [
+      "bedrock",
+      "composer",
+      "roots",
+      "wordpress",
+      "wp",
+      "wp-config"
+  ],
+  "support": {
+      "issues": "https://github.com/roots/bedrock/issues",
+      "forum": "https://discourse.roots.io/category/bedrock"
+  },
+  "repositories": {
+        "0": {
+            "type": "composer",
+            "url": "https://wpackagist.org",
+            "only": [
+                "wpackagist-plugin/*",
+                "wpackagist-theme/*"
+            ]
+        },
+        "1": {
+            "type": "composer",
+            "url": "https://wp-languages.github.io"
+        },
+        "advanced-custom-fields-pro": {
+            "type": "vcs",
+            "url": "git@github.com:florianct/advanced-custom-fields-pro"
+        },
+        "nextend-smart-slider3-pro": {
+            "type": "vcs",
+            "url": "git@github.com:florianct/nextend-smart-slider3-pro"
+        },
+        "sitepress-multilingual-cms": {
+            "type": "vcs",
+            "url": "git@github.com:florianct/sitepress-multilingual-cms"
+        },
+        "wpml-string-translation": {
+            "type": "vcs",
+            "url": "git@github.com:florianct/wpml-string-translation"
+        },
+        "the-grid": {
+            "type": "vcs",
+            "url": "git@github.com:florianct/the-grid"
+        },
+        "acfml": {
+            "type": "vcs",
+            "url": "git@github.com:florianct/acfml"
+        },
+        "elementor-pro": {
+            "type": "vcs",
+            "url": "git@github.com:florianct/elementor-pro"
+        }
+  },
+  "require": {
+      "php": ">=7.1",
+      "composer/installers": "^1.8",
+      "vlucas/phpdotenv": "^4.1.8",
+      "oscarotero/env": "^2.1",
+      "roots/bedrock-autoloader": "^1.0",
+      "roots/wordpress": "5.9.3",
+      "roots/wp-config": "^1.0.0",
+      "roots/wp-password-bcrypt": "^1.0.0",
+      "florianmoser/bedrock-deployer": "^0.3.6",
+      "koodimonni-language/fr_fr": "*",
+      "wpackagist-plugin/wordpress-seo": "^18.0",
+      "wpackagist-plugin/ewww-image-optimizer": "^6.4",
+      "wpackagist-plugin/enable-media-replace": "^3.6",
+      "florianct/nextend-smart-slider3-pro": "dev-main",
+      "florianct/elementor-pro" : "dev-main",
+      "wpackagist-plugin/elementor": "^3.0"
+  },
+  "require-dev": {
+      "squizlabs/php_codesniffer": "^3.5.6",
+      "roave/security-advisories": "dev-master"
+  },
+  "config": {
+      "optimize-autoloader": true,
+      "preferred-install": "dist"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "extra": {
+      "installer-paths": {
+          "web/app/mu-plugins/{$name}/": [
+              "type:wordpress-muplugin"
+          ],
+          "web/app/plugins/{$name}/": [
+              "type:wordpress-plugin"
+          ],
+          "web/app/themes/{$name}/": [
+              "type:wordpress-theme"
+          ]
+      },
+      "wordpress-install-dir": "web/wp",
+      "dropin-paths": {
+          "web/app/languages/": ["vendor:koodimonni-language"],
+          "web/app/languages/plugins/": ["vendor:koodimonni-plugin-language"],
+          "web/app/languages/themes/": ["vendor:koodimonni-theme-language"]
+      }
+  },
+  "scripts": {
+      "post-root-package-install": [
+          "php -r \"copy('.env.example', '.env');\""
+      ],
+      "test": [
+          "phpcs"
+      ]
+  }
+}

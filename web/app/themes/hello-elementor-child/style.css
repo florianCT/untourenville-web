@@ -1,0 +1,224 @@
+/*
+
+Theme Name: Hello Elementor Child
+
+Theme URI: https://github.com/elementor/hello-theme/
+
+Description: Hello Elementor Child is a child theme of Hello Elementor, created by Elementor team
+
+Author: Elementor Team
+
+Author URI: https://elementor.com/
+
+Template: hello-elementor
+
+Version: 1.0.1
+
+Text Domain: hello-elementor-child
+
+License: GNU General Public License v3 or later.
+
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
+
+*/
+
+/***
+* class: .sticky-header
+*/
+header.sticky-header {
+	--header-height: 100px;
+	--shrink-me: 0.6;
+	--transition: .45s cubic-bezier(.4, 0, .2, 1);
+	background-color: rgba(244, 245, 248, 1);
+	transition: background-color var(--transition),
+				backdrop-filter var(--transition),
+				box-shadow var(--transition);
+}
+
+/***
+* Sticky header activated
+*/
+header.sticky-header.elementor-sticky--effects {
+	background-color: rgba(244, 245, 248, .8);
+	box-shadow: 0px 4px 33px 1px rgba(0, 0, 0, .07);
+	-webkit-backdrop-filter: saturate(180%) blur(20px);
+	backdrop-filter: saturate(180%) blur(20px);
+}
+header.sticky-header > .elementor-container {
+	min-height: var(--header-height);
+	transition: min-height var(--transition);
+}
+header.sticky-header.elementor-sticky--effects > .elementor-container {
+	min-height: calc( var(--header-height) * var(--shrink-me) );
+}
+
+/***
+* Shorter header on mobile (70px instead of 100px)
+*/
+@media only screen and (max-width: 767px) {
+	header.sticky-header {
+		--header-height: 70px;
+	}
+}
+
+/***
+* class: .logo
+*/
+header.sticky-header .logo img {
+	transition: transform var(--transition);
+}
+header.sticky-header.elementor-sticky--effects .logo img {
+	transform: scale(.8);
+}
+
+header .elementor-item.elementor-item-anchor.elementor-item-active {
+    color: #fff;
+    background: linear-gradient(to right, #7C878D 0, #fff 10%, #7C878D 20%);
+    background-position: 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s infinite linear;
+    animation-fill-mode: forwards;
+    -webkit-text-size-adjust: none;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  @-moz-keyframes shine {
+    0% {
+      background-position: 0;
+    }
+    60% {
+      background-position: 160px;
+    }
+    100% {
+      background-position: 160px;
+    }
+  }
+  @-webkit-keyframes shine {
+    0% {
+      background-position: 0;
+    }
+    60% {
+      background-position: 160px;
+    }
+    100% {
+      background-position: 160px;
+    }
+  }
+  @-o-keyframes shine {
+    0% {
+      background-position: 0;
+    }
+    60% {
+      background-position: 160px;
+    }
+    100% {
+      background-position: 160px;
+    }
+  }
+  @keyframes shine {
+    0% {
+      background-position: 0;
+    }
+    60% {
+      background-position: 160px;
+    }
+    100% {
+      background-position: 160px;
+    }
+  }
+  
+.luminance-title .elementor-widget-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.elementor-7 .elementor-element.elementor-element-461921b.luminance-title .elementor-heading-title{
+  background: 50% 100%/50% 50% no-repeat radial-gradient(ellipse at bottom, #fff, transparent, transparent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 10vw;
+  -webkit-animation: reveal 3000ms ease-in-out forwards 200ms, glow 2500ms linear infinite 2000ms;
+          animation: reveal 3000ms ease-in-out forwards 200ms, glow 2500ms linear infinite 2000ms;
+}
+@-webkit-keyframes reveal {
+  80% {
+    letter-spacing: 8px;
+  }
+  100% {
+    background-size: 300% 300%;
+  }
+}
+@keyframes reveal {
+  80% {
+    letter-spacing: 8px;
+  }
+  100% {
+    background-size: 300% 300%;
+  }
+}
+@-webkit-keyframes glow {
+  40% {
+    text-shadow: 0 0 8px #fff;
+  }
+}
+@keyframes glow {
+  40% {
+    text-shadow: 0 0 8px #fff;
+  }
+}
+
+/* animation Bold Beauty */
+
+@keyframes showTopText {
+  0% { transform: translate3d(0, 100%, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+@keyframes showBottomText {
+  0% { transform: translate3d(0, -100%, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+.animated-title {
+
+  color: #F5F6F7;
+  font-family: "Poppins", Sans-serif;
+  font-weight: 500;
+  text-shadow: 1px -6px 10px rgb(0 0 0 / 30%);
+}
+.animated-title > div {
+  overflow: hidden;
+}
+.animated-title > div div {
+  font-size: 79px;
+}
+.animated-title > div div span {
+  display: block;
+}
+.animated-title > div.text-top {
+  top: 0;
+}
+.animated-title-animation > div.text-top div {
+  animation: showTopText 2.5s;
+  animation-delay: 0.2s;
+  animation-fill-mode: forwards;
+  bottom: 0;
+  transform: translate(0, 100%);
+}
+.animated-title > div.text-top div span:first-child {
+  color: #F5F6F7;
+}
+.animated-title > div.text-bottom {
+  bottom: 0;
+  padding-left: 100px;
+}
+.animated-title-animation > div.text-bottom div {
+  animation: showBottomText 2.5s;
+  animation-delay: 3.2s;
+  animation-fill-mode: forwards;
+  top: 0;
+  transform: translate(0, -100%);
+}

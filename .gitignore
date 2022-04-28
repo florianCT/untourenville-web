@@ -1,0 +1,46 @@
+# Application
+web/app/plugins/*
+!web/app/plugins/.gitkeep
+web/app/mu-plugins/*/
+web/app/upgrade
+web/app/uploads/*
+!web/app/uploads/.gitkeep
+web/app/languages/*
+!web/app/languages/.gitkeep
+web/app/ewww
+web/app/_backup*
+
+# WordPress
+web/wp
+web/.htaccess
+
+# Logs
+*.log
+
+# Dotenv
+.env
+.env.*
+!.env.example
+
+# Npm
+/node_modules
+
+# Composer
+/vendor
+
+# WP-CLI
+wp-cli.local.yml
+
+# dbbackup
+localDbBackup/*
+!localDbBackup/.gitkeep
+!localDbBackup/initial_db.sql
+_db_export*
+_db_users*
+
+#Wordfence logs
+web/app/wflogs/*
+~$to_wp_bedrock.docx
+
+#MACOS
+.DS_Store
