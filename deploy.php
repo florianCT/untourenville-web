@@ -54,7 +54,7 @@ host( 'untourenville.fr')
  	->user( 'cheftos' )
 	->identityFile('~/.ssh/id_rsa')
 	->set( 'php', '/usr/local/php7.2/bin/php' )
- 	->set( 'deploy_path', '~/public_utev' );
+ 	->set( 'deploy_path', '~/wwwUTEV' );
 
 
 // Tasks
